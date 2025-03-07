@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Tela de cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,17 +26,25 @@
     </nav>
 
     <div class="login-container">
-        <h2>Realize seu login</h2>
+        <h2>Realize seu cadastro</h2>
         <form>
+            <div class="input-group">
+                <label for="txtName">Nome</label>
+                <input type="password" id ="txtName" name = "txtName" placeholder="Digite seu nome" required>
+            </div>
             <div class="input-group">
                 <label for="txtEmail">Email</label>
                 <input type="text" id ="txtEmail" name = "txtEmail" placeholder="Digite seu usuário" required>
             </div>
             <div class="input-group">
-                <label for="txtSenha">Senha</label>
-                <input type="password" id ="txtSenha" name = "txtSenha" placeholder="Digite sua senha" required>
+                <label for="txtPassword">Senha</label>
+                <input type="password" id ="txtPassword" name = "txtPassword" placeholder="Digite sua senha" required>
             </div>
-            <a>Ainda não possui cadastro? <a href="register.html">Cadastre-se</a> </a>
+            <div class="input-group">
+                <label for="txtConfirmPassword">Confirme sua senha</label>
+                <input type="password" id ="txtConfirmPassword" name = "txtConfirmPassword" placeholder="Digite sua senha" required>
+            </div>
+            <a>Já possui cadastro? <a href="login.html">Faça login</a> </a>
             <button type="submit">Entrar</button>
         </form>
     </div>
