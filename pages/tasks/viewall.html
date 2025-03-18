@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas as Tarefas - Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+</head>
+<body>
+    <nav class="nav-private">
+        <div class="nav-container">
+            <ul>
+                <li><a href="../home/home.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn active">Tarefas</a>
+                    <div class="dropdown-content">
+                        <a href="viewall.html" class="active">Ver todas</a>
+                        <a href="trash.html">Lixeira</a>
+                    </div>
+                </li>
+                <li><a href="../settings/settings.html">Configurações</a></li>
+            </ul>
+            <button id="logoutBtn" class="logout-btn">Sair</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Filtros</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="filterStatus">Status</label>
+                    <select id="filterStatus">
+                        <option value="">Todos</option>
+                        <option value="criada">Criada</option>
+                        <option value="andamento">Em Andamento</option>
+                        <option value="finalizada">Finalizada</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterPriority">Prioridade</label>
+                    <select id="filterPriority">
+                        <option value="">Todas</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="regular">Regular</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2>Todas as Tarefas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Prazo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="allTasksList">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="viewall.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lixeira - Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+</head>
+<body>
+    <nav class="nav-private">
+        <div class="nav-container">
+            <ul>
+                <li><a href="../home/home.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn active">Tarefas</a>
+                    <div class="dropdown-content">
+                        <a href="viewall.html">Ver todas</a>
+                        <a href="trash.html" class="active">Lixeira</a>
+                    </div>
+                </li>
+                <li><a href="../settings/settings.html">Configurações</a></li>
+            </ul>
+            <button id="logoutBtn" class="logout-btn">Sair</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-actions" style="margin-bottom: 1rem;">
+            <button onclick="restoreAllTasks()" style="background-color: var(--success-color)">
+                Restaurar Todas
+            </button>
+            <button onclick="deleteAllTasks()" style="background-color: var(--error-color)">
+                Excluir Todas
+            </button>
+        </div>
+
+        <div class="table-container">
+            <h2>Tarefas na Lixeira</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Prazo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="deletedTasksList">
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="trash.js"></script>
+</body>
+</html>
