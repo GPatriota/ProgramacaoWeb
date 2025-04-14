@@ -1,20 +1,16 @@
-function verifyLogin(){
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    if (email == ""){
-        alert ('Preencha o campo email');
-    }
-
-    if(password == ""){
-        alert('Preencha uma senha');
-    }
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     
-    if(email == "admin" && password == "admin"){
-        
-
-        window.location.href= "../home/home.html";
-    } else{
-        alert("Digite o cadastro correto")
-        return;
-}}
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.email === email && u.password === password);
+    
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        window.location.href = '../home/home.html';
+    } else {
+        alert('Email ou senha incorretos!');
+    }
+});

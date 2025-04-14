@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Gerenciador de Tarefas</title>
     <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
     <nav class="nav-public">
@@ -25,6 +26,22 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" maxlength="8" required>
+                </div>
+                <div class="form-group">
+                    <label for="street">Rua</label>
+                    <input type="text" id="street" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="neighborhood">Bairro</label>
+                    <input type="text" id="neighborhood" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade</label>
+                    <input type="text" id="city" readonly>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>

@@ -59,6 +59,10 @@
                     <label for="taskDescription">Descrição</label>
                     <textarea id="taskDescription" required></textarea>
                 </div>
+                <div class="weather-section">
+                    <p>O clima influencia nas suas decisões sobre sua tarefa?</p>
+                    <button type="button" id="weatherBtn">Ver previsão do tempo</button>
+                </div>
                 <div class="form-actions">
                     <button type="submit">Adicionar Tarefa</button>
                 </div>
@@ -79,11 +83,19 @@
                     </tr>
                 </thead>
                 <tbody id="priorityTasksList">
-                    
                 </tbody>
             </table>
         </div>
     </div>
+
+    <div id="weatherModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Previsão do Tempo</h2>
+            <div id="weatherInfo"></div>
+        </div>
+    </div>
+
     <script src="home.js"></script>
 </body>
 </html>
