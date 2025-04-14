@@ -20,7 +20,7 @@ weatherBtn.onclick = async function () {
 
         const weatherInfo = document.getElementById('weatherInfo');
         weatherInfo.innerHTML = `
-            <p><strong>Na cidade que você mora, de acordo com os dados de seu cadastro: </strong> ${data.location.name}</p>
+            <p><strong>Na cidade que você mora, de acordo com seu cadastro: </strong> ${data.location.name}</p>
             <p><strong>Seguem abaixo as principais informações da previsão do tempo da cidade. </strong> </p>
             <p><strong>Temperatura máxima:</strong> ${data.forecast.forecastday[0].day.maxtemp_c}°C</p>
             <p><strong>Temperatura mínima:</strong> ${data.forecast.forecastday[0].day.mintemp_c}°C</p>
