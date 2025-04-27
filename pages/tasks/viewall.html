@@ -26,6 +26,45 @@
 
     <div class="container">
         <div class="form-container">
+            <h2>Nova Tarefa</h2>
+            <form id="newTaskForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="taskName">Nome da Tarefa</label>
+                        <input type="text" id="taskName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridade</label>
+                        <select id="taskPriority" required>
+                            <option value="baixa">Baixa</option>
+                            <option value="regular">Regular</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskStatus">Status</label>
+                        <select id="taskStatus" required>
+                            <option value="criada">Criada</option>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="finalizada">Finalizada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDeadline">Prazo</label>
+                        <input type="date" id="taskDeadline" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Descrição</label>
+                    <textarea id="taskDescription" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Adicionar Tarefa</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container">
             <h2>Filtros</h2>
             <div class="form-grid">
                 <div class="form-group">
