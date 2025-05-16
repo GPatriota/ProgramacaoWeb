@@ -8,13 +8,6 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
     window.location.href = '../login/login.html';
 });
 
-function applyTheme(theme) {
-    document.body.classList.remove('theme-light', 'theme-dark');
-    document.body.classList.add(`theme-${theme}`);
-}
-
-applyTheme(currentUser.theme || 'light');
-
 document.getElementById('filterStatus').addEventListener('change', loadTasks);
 document.getElementById('filterPriority').addEventListener('change', loadTasks);
 

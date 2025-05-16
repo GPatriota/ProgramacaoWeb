@@ -8,14 +8,6 @@
     --success-color: #4CAF50;
 }
 
-.theme-dark {
-    --primary-color: #90caf9;
-    --secondary-color: #FFD54F;
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --border-color: #424242;
-}
-
 * {
     margin: 0;
     padding: 0;

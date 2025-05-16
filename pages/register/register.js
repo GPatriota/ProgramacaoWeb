@@ -31,7 +31,6 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         street,
         neighborhood,
         city,
-        theme: 'light'
     };
     
     users.push(newUser);
