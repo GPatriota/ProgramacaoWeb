@@ -1,0 +1,131 @@
+.nav-public {
+    background-color: #2c3e50;
+    padding: 1rem;
+    color: white;
+}
+
+.nav-public ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;  
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-public ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: inherit;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.nav-public ul li a:hover,
+.nav-public ul li a.active {
+    background-color: #34495e;
+}
+
+.nav-public ul li {
+    list-style: none;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9fafb;
+    padding: 2rem;
+}
+
+.auth-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+
+.auth-box h1 {
+    margin-bottom: 1.8rem;
+    font-weight: 700;
+    color: #34495e;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.3rem;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    border: 1.7px solid #ccc;
+    border-radius: 7px;
+    transition: border-color 0.3s ease;
+    color: #222;
+}
+
+input[readonly] {
+    background-color: #f0f0f0;
+    color: #777;
+    cursor: not-allowed;
+}
+
+input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #34495e;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1c5d8a;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.4rem;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.login-link a {
+    color: #34495e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #1c5d8a;
+}

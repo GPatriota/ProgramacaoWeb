@@ -36,7 +36,6 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     
-    alert('Cadastro realizado com sucesso!');
     window.location.href = '../login/login.html';
 });
 
