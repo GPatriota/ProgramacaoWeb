@@ -33,7 +33,7 @@ Este é um Gerenciador de Tarefas completo desenvolvido com **HTML**, **CSS** e 
 
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript
 - LocalStorage
 - API ViaCEP (endereços)
 - API de Clima/Previsão do Tempo
