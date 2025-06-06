@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
     if (user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        window.location.href = '/pages/home/home.html';
+        window.location.href = 'pages/home/home.html';
     } else {
         alert('Email ou senha incorretos!');
     }
