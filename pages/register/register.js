@@ -54,7 +54,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
 
-    window.location.href = '../login/login.html';
+    window.location.href = '../../index.html';
 });
 
 document.getElementById('cep').addEventListener('blur', async function(e) {
