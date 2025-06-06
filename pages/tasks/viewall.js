@@ -13,11 +13,34 @@ document.getElementById('filterPriority').addEventListener('change', loadTasks);
 
 document.getElementById('newTaskForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
+    let isValid = true;
+
+    function checkField(id, message) {
+        const field = document.getElementById(id);
+        const errorSpan = field.parentElement.querySelector('.error-message');
+        const value = field.value.trim();
+
+        if (!value) {
+            errorSpan.textContent = message;
+            isValid = false;
+        } else {
+            errorSpan.textContent = '';
+        }
+    }
+
+    checkField('taskName', 'Campo obrigatório');
+    checkField('taskPriority', 'Campo obrigatório');
+    checkField('taskStatus', 'Campo obrigatório');
+    checkField('taskDeadline', 'Campo obrigatório');
+    checkField('taskDescription', 'Campo obrigatório');
+
+    if (!isValid) return;
+
     const task = {
         id: Date.now().toString(),
-        name: document.getElementById('taskName').value,
-        description: document.getElementById('taskDescription').value,
+        name: document.getElementById('taskName').value.trim(),
+        description: document.getElementById('taskDescription').value.trim(),
         priority: document.getElementById('taskPriority').value,
         status: document.getElementById('taskStatus').value,
         deadline: document.getElementById('taskDeadline').value,
@@ -25,11 +48,11 @@ document.getElementById('newTaskForm').addEventListener('submit', function(e) {
         deleted: false,
         createdAt: new Date().toISOString()
     };
-    
+
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    
+
     this.reset();
     loadTasks();
     alert('Tarefa criada com sucesso!');
@@ -39,7 +62,7 @@ function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const statusFilter = document.getElementById('filterStatus').value;
     const priorityFilter = document.getElementById('filterPriority').value;
-    
+
     const filteredTasks = tasks.filter(task => {
         const matchesUser = task.userId === currentUser.id;
         const notDeleted = !task.deleted;
@@ -49,10 +72,10 @@ function loadTasks() {
         if (priorityFilter && task.priority !== priorityFilter) return false;
         return true;
     });
-    
+
     const tasksList = document.getElementById('allTasksList');
     tasksList.innerHTML = '';
-    
+
     filteredTasks.forEach(task => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -88,7 +111,7 @@ function loadTasks() {
 function updateTaskStatus(taskId, newStatus) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const taskIndex = tasks.findIndex(t => t.id === taskId);
-    
+
     if (taskIndex !== -1) {
         tasks[taskIndex].status = newStatus;
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -99,7 +122,7 @@ function updateTaskStatus(taskId, newStatus) {
 function updateTaskPriority(taskId, newPriority) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const taskIndex = tasks.findIndex(t => t.id === taskId);
-    
+
     if (taskIndex !== -1) {
         tasks[taskIndex].priority = newPriority;
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -110,7 +133,7 @@ function updateTaskPriority(taskId, newPriority) {
 function updateTaskDeadline(taskId, newDeadline) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const taskIndex = tasks.findIndex(t => t.id === taskId);
-    
+
     if (taskIndex !== -1) {
         tasks[taskIndex].deadline = newDeadline;
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -121,7 +144,7 @@ function updateTaskDeadline(taskId, newDeadline) {
 function deleteTask(taskId) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const taskIndex = tasks.findIndex(t => t.id === taskId);
-    
+
     if (taskIndex !== -1) {
         tasks[taskIndex].deleted = true;
         localStorage.setItem('tasks', JSON.stringify(tasks));

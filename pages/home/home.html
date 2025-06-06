@@ -1,101 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Início - Gerenciador de Tarefas</title>
-    <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
     <nav class="nav-private">
-        <div class="nav-container">
-            <ul>
-                <li><a href="home.html" class="active">Início</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Tarefas</a>
-                    <div class="dropdown-content">
-                        <a href="../tasks/viewall.html">Ver todas</a>
-                        <a href="../tasks/trash.html">Lixeira</a>
-                    </div>
-                </li>
-                <li><a href="../settings/settings.html">Configurações</a></li>
-            </ul>
-            <button id="logoutBtn" class="logout-btn">Sair</button>
-        </div>
+      <div class="nav-container">
+        <ul>
+          <li><a href="home.html" class="active">Início</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Tarefas</a>
+            <div class="dropdown-content">
+              <a href="../tasks/viewall.html">Ver todas</a>
+              <a href="../tasks/trash.html">Lixeira</a>
+            </div>
+          </li>
+          <li><a href="../settings/settings.html">Configurações</a></li>
+        </ul>
+        <button id="logoutBtn" class="logout-btn">Sair</button>
+      </div>
     </nav>
 
     <div class="container">
-        <div class="form-container">
-            <h2>Nova Tarefa</h2>
-            <form id="newTaskForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="taskName">Nome da Tarefa</label>
-                        <input type="text" id="taskName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="taskPriority">Prioridade</label>
-                        <select id="taskPriority" required>
-                            <option value="baixa">Baixa</option>
-                            <option value="regular">Regular</option>
-                            <option value="alta">Alta</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="taskStatus">Status</label>
-                        <select id="taskStatus" required>
-                            <option value="criada">Criada</option>
-                            <option value="andamento">Em Andamento</option>
-                            <option value="finalizada">Finalizada</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="taskDeadline">Prazo</label>
-                        <input type="date" id="taskDeadline" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="taskDescription">Descrição</label>
-                    <textarea id="taskDescription" required></textarea>
-                </div>
-                <div class="weather-section">
-                    <p>O clima influencia nas suas decisões sobre sua tarefa?</p>
-                    <button type="button" id="weatherBtn">Ver previsão do tempo</button>
-                </div>
-                <div class="form-actions">
-                    <button type="submit">Adicionar Tarefa</button>
-                </div>
-            </form>
-        </div>
+      <div class="form-container">
+        <h2>Nova Tarefa</h2>
+        <form id="newTaskForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="taskName">Nome da Tarefa</label>
+              <input type="text" id="taskName" />
 
-        <div class="table-container">
-            <h2>Tarefas Prioritárias</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Prioridade</th>
-                        <th>Status</th>
-                        <th>Prazo</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="priorityTasksList">
-                </tbody>
-            </table>
-        </div>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="taskPriority">Prioridade</label>
+              <select id="taskPriority">
+                <option value="">Selecione</option>
+                <option value="baixa">Baixa</option>
+                <option value="regular">Regular</option>
+                <option value="alta">Alta</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="taskStatus">Status</label>
+              <select id="taskStatus">
+                <option value="">Selecione</option>
+                <option value="criada">Criada</option>
+                <option value="andamento">Em Andamento</option>
+                <option value="finalizada">Finalizada</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="taskDeadline">Prazo</label>
+              <input type="date" id="taskDeadline" />
+
+              <span class="error-message"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="taskDescription">Descrição</label>
+            <textarea id="taskDescription"></textarea>
+
+            <span class="error-message"></span>
+          </div>
+          <div class="weather-section">
+            <p>O clima influencia nas suas decisões sobre sua tarefa?</p>
+            <button type="button" id="weatherBtn">Ver previsão do tempo</button>
+          </div>
+          <div class="form-actions">
+            <button type="submit">Adicionar Tarefa</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <h2>Tarefas Prioritárias</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Prioridade</th>
+              <th>Status</th>
+              <th>Prazo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="priorityTasksList"></tbody>
+        </table>
+      </div>
     </div>
 
     <div id="weatherModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Previsão do Tempo</h2>
-            <div id="weatherInfo"></div>
-        </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Previsão do Tempo</h2>
+        <div id="weatherInfo"></div>
+      </div>
     </div>
 
     <script src="home.js"></script>
-</body>
+  </body>
 </html>

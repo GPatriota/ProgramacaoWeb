@@ -11,27 +11,60 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
 
 document.getElementById('newTaskForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
+    const errorSpans = document.querySelectorAll('.error-message');
+    errorSpans.forEach(span => span.textContent = '');
+    const inputs = this.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => input.classList.remove('invalid'));
+
+    let isValid = true;
+
+    const taskName = document.getElementById('taskName');
+    const taskPriority = document.getElementById('taskPriority');
+    const taskStatus = document.getElementById('taskStatus');
+    const taskDeadline = document.getElementById('taskDeadline');
+    const taskDescription = document.getElementById('taskDescription');
+
+    const fields = [
+        { el: taskName, name: "Nome da Tarefa" },
+        { el: taskPriority, name: "Prioridade" },
+        { el: taskStatus, name: "Status" },
+        { el: taskDeadline, name: "Prazo" },
+        { el: taskDescription, name: "Descrição" }
+    ];
+
+    fields.forEach(field => {
+        if (!field.el.value.trim()) {
+            const errorSpan = field.el.parentElement.querySelector('.error-message');
+            errorSpan.textContent = `${field.name} é obrigatório.`;
+            field.el.classList.add('invalid');
+            isValid = false;
+        }
+    });
+
+    if (!isValid) return;
+
     const task = {
         id: Date.now().toString(),
-        name: document.getElementById('taskName').value,
-        description: document.getElementById('taskDescription').value,
-        priority: document.getElementById('taskPriority').value,
-        status: document.getElementById('taskStatus').value,
-        deadline: document.getElementById('taskDeadline').value,
+        name: taskName.value,
+        description: taskDescription.value,
+        priority: taskPriority.value,
+        status: taskStatus.value,
+        deadline: taskDeadline.value,
         userId: currentUser.id,
         deleted: false,
         createdAt: new Date().toISOString()
     };
-    
+
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    
+
     this.reset();
     loadPriorityTasks();
     alert('Tarefa criada com sucesso!');
 });
+
 
 function loadPriorityTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
