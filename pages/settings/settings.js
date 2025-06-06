@@ -1,11 +1,11 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 if (!currentUser) {
-  window.location.href = "../login/login.html";
+  window.location.href = "../../index.html";
 }
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.removeItem("currentUser");
-  window.location.href = "../login/login.html";
+  window.location.href = "../../index.html";
 });
 
 document.getElementById("currentName").value = currentUser.name;
